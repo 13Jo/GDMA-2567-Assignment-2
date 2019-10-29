@@ -1,0 +1,369 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------------------------------------------------------
+>>> CSS STANDARDS
+----------------------------------------------------------------
+1. Place in appropriate section
+2. Add new sections to the Table of Contents as needed
+3. Order properties consistently inside each declaration i.e. alphabetically or by function 
+4. Declaration selectors should each occupy a new line
+5. Enter one new line between rules
+6. Enter more than one new line between categories 
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Forms
+        - Lists
+        - Media
+        - Tables
+        - Typography: Headings, Paragraphs, Blockquotes, Anchors
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        - Buttons
+        - Header
+        - Navigation 
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - Alignment	    
+        - Color
+        - Size
+
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+3.0 - GENERIC 
+-------------------------------------------------------------- */
+
+#activ_managed_pay, #student_choice_refunds, #estore, #cashiering, #hosted_payments, #sponsored_payments, #refunds {
+	display: none;
+}
+
+* {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+html {
+	font-size: 0.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+	html {
+		font-size: 0.9rem;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	html {
+		font-size: 1rem;
+	}
+}
+
+/*--------------------------------------------------------------
+4.0 - ELEMENTS 
+-------------------------------------------------------------- */
+
+/*--- TYPOGRAPHY ---*/
+
+
+
+/*--- Headings ---*/
+
+h1 {
+	display: block;
+	float: left;
+	font-size: 2rem;
+	letter-spacing: -0.025em;
+	margin: 0;
+	padding: 0.6em 0;
+}
+
+h1 a {
+	color: #3c812e;
+}
+
+h1 a span {
+	color: #78b53b;
+}
+
+/*--- Anchors ---*/
+
+a {
+	text-decoration: none;
+}
+
+
+
+/*--------------------------------------------------------------
+5.0 - OBJECTS 
+-------------------------------------------------------------- */
+
+/*--- Framework ---*/
+
+#hero > div {
+	margin-top: 4em;
+	padding: 15em 0 10em 0;
+}
+
+@media only screen and (min-width: 768px) {
+	#hero_txt_sm {
+		display: none;
+	}
+	#hero > div {
+	margin-top: 4em;
+	padding: 15em 0 10em 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#hero > div > p, #hero > div > div {
+		display: none;
+	}
+}
+
+
+/*--------------------------------------------------------------
+6.0 - COMPONENTS 
+-------------------------------------------------------------- */
+
+/*--- Buttons ---*/
+
+.green-btn-sm {
+	background-color: #3c812e;
+	color: #fff;
+	display: inline-block;
+	float: right;
+	font-weight: 600;
+	margin-top: 0.825em;
+	padding: 1em 2em;
+	text-transform: uppercase;
+}
+
+.green-btn-sm:hover {
+	background-color: #78b53b;
+}
+
+
+/*body {
+  margin: 0;
+  background-color: #f4f4f4;
+}
+*/
+
+/*
+a {
+  color: #000;
+}
+*/
+
+/* header */
+
+.top_bar {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+	top: 0;
+	left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.top_bar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.top_bar li a {
+	color: #4d4d4d;
+	display: block;
+	font-size: 1rem;
+	padding: 1em 1em;
+	text-transform: uppercase;
+}
+
+.top_bar li a:hover,
+.top_bar .menu-btn:hover {
+	background-color: #f4f4f4;
+	color: #78b53b;
+}
+
+/*
+.top_bar .logo {
+  display: block;
+  float: left;
+  font-size: 1em;
+  padding: 0.15em 0;
+  text-decoration: none;
+}
+*/
+
+/* menu */
+
+.top_bar .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.top_bar .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.top_bar .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.top_bar .menu-icon .navicon:before,
+.top_bar .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.top_bar .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.top_bar .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.top_bar .menu-btn {
+  display: none;
+}
+
+.top_bar .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.top_bar .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.top_bar .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.top_bar .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.top_bar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.top_bar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media only screen and (min-width: 768px) {
+	.top_bar li a:hover,
+	.top_bar .menu-btn:hover {
+	background-color: #fff;
+	color: #78b53b;
+}
+  .top_bar li {
+    float: left;
+  }
+  .top_bar li a {
+	font-size: 0.8rem;
+	padding: 2.45em 0.8em;
+  }
+  .top_bar .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .top_bar .menu-icon {
+    display: none;
+  }
+}
+
+#hero {
+	background: url("../img/cc_hero.jpg") no-repeat center center fixed;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+
+/* --- ORGANISE --- */
+
+/* Style the tab */
+.tab {
+  float: left;
+  background-color: #f1f1f1;
+  width: 25%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 50%;
+  border-left: none;
+  height: 300px;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
